@@ -19,8 +19,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the current directory contents into the container
 COPY . .
 
-EXPOSE 80
-
-# Start the app
-CMD ["gunicorn", "-b", "0.0.0.0:80","app:app","--workers","1","-k","uvicorn.workers.UvicornWorker"]
+CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:5000"]
 
