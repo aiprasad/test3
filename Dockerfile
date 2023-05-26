@@ -1,5 +1,5 @@
 # Use a base image that includes both Python and Nginx
-FROM tiangolo/uwsgi-nginx-flask:python3.9
+FROM python3.9-slim-buster
 
 
 # Set a directory for the application
