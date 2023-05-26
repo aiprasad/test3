@@ -2,3 +2,4 @@ torch
 transformers
 flask
 accelerate
+uvicorn
