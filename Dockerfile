@@ -1,6 +1,5 @@
 # Use a base image that includes both Python and Nginx
-FROM tiangolo/uwsgi-nginx-flask:python3.9
-
+FROM python:3.9
 
 # Set a directory for the application
 WORKDIR /app
@@ -20,6 +19,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the current directory contents into the container
 COPY . .
 
-# Set the command to start the uWSGI server
-CMD ["uwsgi", "--ini", "uwsgi.ini"]
+# Set the command to start the app using uvicorn
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "7860"]
 
