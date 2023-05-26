@@ -23,10 +23,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the current directory contents into the container
 COPY . .
 
-# Expose the desired port
-EXPOSE 5000
 
 # Set the command to start the uWSGI server
-# CMD ["uwsgi", "--ini", "uwsgi.ini"]
-CMD ["uwsgi", "--ini", "uwsgi.ini"]
+CMD ["python3","app.py"]
 
