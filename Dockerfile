@@ -1,9 +1,6 @@
 # Use a base image that includes both Python and Nginx
 FROM tiangolo/uwsgi-nginx-flask:python3.9
 
-# Specify the platform
-ARG TARGETPLATFORM=linux/arm64/v8
-
 
 # Set a directory for the application
 WORKDIR /app
@@ -31,5 +28,5 @@ EXPOSE 5000
 
 # Set the command to start the uWSGI server
 # CMD ["uwsgi", "--ini", "uwsgi.ini"]
-CMD ["uwsgi", "--ini", "uwsgi.ini", "--uid", "uwsgi"]
+CMD ["uwsgi", "--ini", "uwsgi.ini"]
 
