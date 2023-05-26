@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Generation</title>
+    <style>
+        .generated-box {
+            border: 1px solid black;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Text Generation</h1>
+    <form action="/generate">
+        <label for="prompt">Enter a prompt:</label>
+        <input type="text" id="prompt" name="prompt" required>
+        <button type="submit">Generate</button>
+    </form>
+    {% if generated_text %}
+        <div class="generated-box">
+            <p><strong>Prompt:</strong> {{ prompt }}</p>
+            <p><strong>Response:</strong> {{ generated_text[0]['generated_text'] }}</p>
+        </div>
+    {% endif %}
+</body>
+</html>
+
+
