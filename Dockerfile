@@ -1,5 +1,5 @@
 # Use a base image that includes both Python and Nginx
-FROM python:3.8-slim-buster
+FROM tiangolo/uwsgi-nginx-flask:python3.9
 
 
 # Set a directory for the application
@@ -21,5 +21,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Set the command to start the uWSGI server
-CMD ["python3","app.py"]
+CMD ["uwsgi", "--ini", "uwsgi.ini"]
 
