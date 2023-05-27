@@ -20,8 +20,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 #copy the application code
 COPY . .
 
-#Expose the required port
-Expose 80
+#xpose the required port
+EXPOSE 80
 
 #start the flask application
 CMD ["python3", "app.py"]
