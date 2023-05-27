@@ -28,7 +28,7 @@ def generate():
     return render_template('index.html', prompt=prompt, generated_text=generated_text)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=5000)
+    app.run(host='0.0.0.0',port=80)
 
 
 
