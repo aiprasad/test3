@@ -4,7 +4,7 @@ metadata:
   name: dolly-ingress
 spec:
   rules:
-  - host: localhost
+  - host: 52.226.209.229
     http:
       paths:
       - pathType: Prefix
