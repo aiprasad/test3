@@ -1,23 +1,28 @@
-# Use a base image that includes both Python and Nginx
+#use base image offical from python
 FROM python:3.9
 
-# Set a directory for the application
+#set directory for the application
 WORKDIR /app
 
+#system package installation and remove package list to save disk space
 RUN apt-get update && apt-get install -y \
     gcc \
     python3-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Install dependencies
+#copy the requirements file
 COPY requirements.txt ./
 
-# Install any dependencies
+#install dependencies
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the current directory contents into the container
+#copy the application code
 COPY . .
 
-CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:5000"]
+#Expose the required port
+Expose 5000
+
+#start the flask application
+CMD ["python3", "app.py"]
 
