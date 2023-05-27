@@ -1,5 +1,3 @@
-
-    
 import torch
 from flask import Flask, render_template, request
 from instruct_pipeline import InstructionTextGenerationPipeline
@@ -24,8 +22,8 @@ def generate():
     generated_text = generate_text(prompt)
     return render_template('index.html', prompt=prompt, generated_text=generated_text)
 
-# if __name__ == '__main__':
-#     app.run(host='0.0.0.0')
+if __name__ == '__main__':
+    app.run(host='0.0.0.0',port=5000)
 
 
 
