@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: dolly-service
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: dolly-app
   ports:
