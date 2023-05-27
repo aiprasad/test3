@@ -1,25 +1,29 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dolly-deployment
+  name: my-app-deployment
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: dolly-app
+      app: my-app
   template:
     metadata:
       labels:
-        app: dolly-app
+        app: my-app
     spec:
       containers:
-      - name: dolly-app
+      - name: my-app
         image: docker.io/aiprasad/myapp
         ports:
         - containerPort: 5000
-     tolerations:
-     - key: node-role.kubernetes.io/control-plane
-       operator: Exists
-       effect: NoSchedule
+        env:
+        - name: FLASK_ENV
+          value: production
+      tolerations:
+      - key: node-role.kubernetes.io/control-plane
+        operator: Exists
+        effect: NoSchedule
+
 
 
