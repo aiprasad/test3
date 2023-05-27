@@ -3,10 +3,12 @@ kind: Service
 metadata:
   name: dolly-service
 spec:
+  type: NodePort
   selector:
     app: dolly-app
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
-  type: NodePort
+      nodePort: 30001
+  
