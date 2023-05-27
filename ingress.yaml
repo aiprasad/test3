@@ -4,7 +4,7 @@ metadata:
   name: dolly-ingress
 spec:
   rules:
-  - host: 52.226.209.229
+  - host: prasad.eastus.cloudapp.azure.com
     http:
       paths:
       - pathType: Prefix
