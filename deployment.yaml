@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app-deployment
+  name: dolly-app-deploy
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: my-app
+      app: dolly-app
   template:
     metadata:
       labels:
-        app: my-app
+        app: dolly-app
     spec:
       containers:
-      - name: my-app
+      - name: dolly-app
         image: docker.io/aiprasad/myapp
         ports:
-        - containerPort: 5000
+        - containerPort: 80
         env:
         - name: FLASK_ENV
           value: production
